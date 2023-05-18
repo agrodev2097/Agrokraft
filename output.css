@@ -275,7 +275,7 @@
   grid-template-columns: 33vw auto 33vw;
   grid-gap: 0px;
   padding: 0px;
-  line-height: 0.7vh;
+  line-height: 1vh;
   text-align: center;
   font-size: 2.5vh;
   font-weight: bold;
