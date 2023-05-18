@@ -1,0 +1,385 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 5% repeat(3, 30%) 5%;
+  row-gap: 3%;
+  column-gap: 1%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header header"
+    ". FluidInd FlowInd PressInd ."
+    ". SpeedInd Status PumpInd ."
+    "SetFlowInfo SetFlowInfo SetFlowInfo SetFlowInfo SetFlowInfo"
+    ". MenuButton MenuButton MenuButton ."
+    "footer footer footer footer footer";
+
+  header {
+    grid-area: header;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+    background-color:#00325B;
+    color:white;
+    line-height:1vh;
+    text-align:center;
+    font-size: 3.5vh;
+    font-weight:bold;
+    .round{
+      width:2vh;
+      height:2vh;
+      border-radius:1vh;
+      background-color:green;
+     }
+     #ConnectGPS{
+      grid-column: 2/3;
+      align-self: center;
+      justify-self: center;
+     }
+     .name{
+      grid-column: 3/7;
+      align-self: center;
+      justify-self: center;
+     }
+     #ConnectLamp{
+      grid-column: 7/8;
+      align-self: center;
+      justify-self: center;
+     }
+     a{
+      justify-self: center;
+      align-self: center;
+     }
+     .arrow{
+      width:2vh;
+      height:2vh;
+      border-top:0.4vh solid #FFFFFF;
+      border-right:0.4vh solid #FFFFFF;
+      margin-right:2vh;
+     }
+     .arrow-right{
+      transform:rotate(45deg);
+     }
+  }
+
+  .Cards{
+    height: 40vh;
+    width: 15vw;
+    border-radius:5px;
+    background-color:#0088F8;
+    box-shadow:2px 2px 12px 1px rgba(0,70,140,.5);
+    justify-self: center;
+  }
+
+  .FlowCardsCircle{
+    width:20vw;
+    height:20vw;
+    background:#fefcff;
+    border-radius:50%;
+    border:1px solid rgba(140,140,140,.5);
+    box-shadow:2px 2px 12px 1px rgba(140,140,140,.5);
+  }
+
+  .PumpCardsCircle{
+    width:20vw;
+    height:20vw;
+    background:#fefcff;
+    border-radius:50%;
+    border:1px solid rgba(140,140,140,.5);
+    box-shadow:2px 2px 12px 1px rgba(140,140,140,.5);
+  }
+
+  .SetFlowInfo{
+    padding-top: 4%;
+    border-top: 4px solid #0078DB;
+    grid-area: SetFlowInfo;
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: 13.3% 13.3% 13.3% 20% 10% 10% 10% 10%;
+    grid-template-areas: 
+    "sw1 sw2 sw3 info pa1 pa2 pa3 pa4"
+    " . input input input input input input .";
+    height:5%;
+    color:#FFFFFF;
+    text-align:center;
+    font-size:3vh;
+    font-weight:bold;
+    #SW1{
+      grid-area: sw1;
+      justify-self: center;
+    }
+    #SW2{
+      grid-area: sw2;
+      justify-self: center;
+    }
+    #SW3{
+      grid-area: sw3;
+      justify-self: center;
+    }
+    #PA{
+      grid-area: pa1;
+      justify-self: center;
+    }
+    #PB{
+      grid-area: pa2;
+      justify-self: center;
+    }
+    #PC{
+      grid-area: pa3;
+      justify-self: center;
+    }
+    #PD{
+      grid-area: pa4;
+      justify-self: center;
+    }
+
+    .FlowInfo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 8vh;
+      border:none;
+      border-radius: 5px;
+      background-color:#0078DB;
+      color:#FFFFFF;
+      font-size:2.7vh;
+      font-weight:bold;
+    } 
+
+    .SW{
+      height:3vh;
+      width:3vh;
+      border:none;
+      border-radius:5px;
+      background-color:#BC0028;
+      color:#FFFFFF;
+      text-align:center;
+      font-size:2.0vh;
+      font-weight:bold;
+    }
+    .PU{
+      height:3vh;
+      width:3vh;
+      border:none;
+      border-radius:5px;
+      background-color:#3EAB0C;
+      color:#FFFFFF;
+      text-align:center;
+      font-size:2.0vh;
+      font-weight:bold;
+    } 
+    input[type=range]{
+      margin-top: 5%;
+      grid-area: input;
+      -webkit-appearance: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track{
+      width:95%;
+      height:2.0vh;
+      cursor:pointer;
+      background:#48A3D9;
+      border-radius:25px;
+      border:1px solid #0000A0;
+    }
+    input:hover::-webkit-slider-runnable-track{
+      background-color:#aa39b5;
+    }
+    input[type=range]::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: goldenrod;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background: #ccc;
+    }
+  }
+
+  #FluidInd{
+    grid-area: FluidInd;
+    background-color: #0088F8;
+  }
+
+  #FlowInd {
+    grid-area: FlowInd;
+    background-color: #0078DB;
+    border-radius: 2%;
+    box-shadow:2px 2px 12px 1px rgba(140,140,140,.5);
+  }
+
+  #PressInd {
+    grid-area: PressInd;
+    background-color: #0088F8;
+  }
+
+  #SpeedInd {
+    grid-area: SpeedInd;
+    justify-self: center;
+  }
+
+  #PumpInd {
+    grid-area: PumpInd;
+    justify-self: center;
+  }
+
+  #StatusInfo {
+    height: 15vh;
+    width: 25vh;
+    border: 2px solid #0088F8;
+    background-color:#0078DB;
+    color:white;
+    border-radius: 5vh;
+    grid-area: Status;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      font-size:4vh;
+      font-weight:bold;
+    }
+  }
+
+  .MenuButton{
+    margin-top: 2%;
+    margin-bottom: 3%;
+    grid-area: MenuButton;
+    grid-column: 2/5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    border-radius:5px;
+    .ResetBotton{ 
+      border:none;
+      border-radius:4px;
+      color:#FFFFF8;
+      background-color:#E68211;
+      margin:0px auto;
+      text-align:center;
+      font-size:4.0vw;
+      font-weight:bold;
+     } 
+     .StopBotton{ 
+      border:none;
+      border-radius:4px;
+      color:#FFFFF8;
+      background-color:#BC0028;
+      margin:0px auto;
+      text-align:center;
+      font-size:4.0vw;
+      font-weight:bold; 
+     }
+     .StartBotton{ 
+      border:none;
+      border-radius:4px;
+      color:#FFFFF8;
+      background-color:#3EAB0C;
+      margin:0px auto;
+      text-align:center;
+      font-size:4.0vw;
+      font-weight:bold;
+     }
+  }
+
+  footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: 
+    "info info info"
+    "cnt cnt cnt";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto;
+    width:100vw;
+    background-color:#00325B;
+    color:white;
+    display:grid;
+    grid-template-columns:33vw auto 33vw;
+    grid-gap:0px;
+    padding:0px;
+    line-height:0.7vh;
+    text-align:center;
+    font-size:2.5vh;
+    font-weight:bold;
+    .cnt{
+      grid-area: cnt;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen
+  and (min-device-width: 374px)
+  and (max-device-width: 576px){
+  .grid-container {
+    display: grid;
+    grid-template-columns: 5% repeat(3, 30%) 5%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header header header header header"
+      ". FluidInd . PressInd ."
+      ". FlowInd FlowInd FlowInd ."
+      ". SpeedInd . PumpInd ."
+      ". .  Status . ."
+      ". SetFlowInfo SetFlowInfo SetFlowInfo ."
+      ". MenuButton MenuButton MenuButton ."
+      "footer footer footer footer footer";
+      header{
+        grid-area: header;
+        display: grid;
+      }
+      #FluidInd{
+        height: 25vh;
+        justify-self: center;
+      }
+
+      #PressInd{
+        height: 25vh;
+        justify-self: center;
+      }
+
+      #FlowInd{
+        height: 45vh;
+      }
+
+      #SpeedInd{
+        margin-left: 30px;
+        height: 20vh;
+        width: 20vh;
+      }
+
+      #PumpInd{
+        margin-right: 30px;
+        height: 20vh;
+        width: 20vh;
+      }
+
+      #StatusInfo{
+        justify-self: center;
+        align-self: center;
+      }
+      
+      footer{
+        display: grid;
+        grid-template-areas: 
+        "info info info"
+        "cnt cnt cnt"
+        "cnt cnt cnt";
+        .cnt{
+          grid-area: cnt;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+  }
+}
+
+

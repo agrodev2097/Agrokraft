@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>AgroFlow</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <div class="round round-green" id="ConnectGPS"></div>
+            <div class="name">
+                <p>AGROKRAFT</p>
+            </div>
+            <div class="round round-green" id="ConnectLamp"></div>
+            <a href="Init.html"><div class="arrow arrow-right"></div></a>
+        </header>
+
+        <div class="Cards" id="FluidInd"></div>  
+        <div class="CardsCircle" id="FlowInd"></div>  
+        <div class="Cards" id="PressInd"></div> 
+        <div class="FlowCardsCircle" id="SpeedInd"></div>
+        <div class="PumpCardsCircle" id="PumpInd"></div>
+        <div  class="SetFlowInfo" >
+            <button class="SW" id="SW1">1</button>
+            <button class="SW" id="SW2">2</button>
+            <button class="SW" id="SW3">3</button> 
+            <div class="FlowInfo" id="FlowInf">100 l/ha</div>
+            <button class="PU" id="PA">1</button>
+            <button class="PU" id="PB">2</button>
+            <button class="PU" id="PC">3</button>
+            <button class="PU" id="PD">4</button>
+            <input type="range" id="SetFlowSlider" class="RangeSetFlow" min="0" max="400" value="100" step="5">
+        </div>
+        <div class="Status" id="StatusInfo" >
+            <p>STATUS</p>
+        </div>
+        <div class="MenuButton" >
+            <button class="ResetBotton"id="ResetBottom">RESET</button>
+            <button class="StopBotton"id="StopBottom"onclick="StopF()">STOP</button>
+            <button class="StartBotton"id="StartBottom">START</button>
+        </div>
+       <footer>
+            <div class="info"><p id="LineInfo">3.4 m</p></div>
+            <div class="info"><p id="SquareInfo">01:27:23</p></div>
+            <div class="info"><p id="TimeStamp">12:45:17</p></div>
+            <div class="cnt"><p>50769, Seerosenweg 6, Köln, Deutschland</p><br><p>+49 174 286 125 4</p></div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
