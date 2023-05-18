@@ -1,0 +1,341 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 5% repeat(3, 30%) 5%;
+  row-gap: 3%;
+  column-gap: 1%;
+  grid-template-rows: auto;
+  grid-template-areas: "header header header header header" ". FluidInd FlowInd PressInd ." ". SpeedInd Status PumpInd ." "SetFlowInfo SetFlowInfo SetFlowInfo SetFlowInfo SetFlowInfo" ". MenuButton MenuButton MenuButton ." "footer footer footer footer footer";
+}
+.grid-container header {
+  grid-area: header;
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+  background-color: #00325B;
+  color: white;
+  line-height: 1vh;
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+}
+.grid-container header .round {
+  width: 2vh;
+  height: 2vh;
+  border-radius: 1vh;
+  background-color: green;
+}
+.grid-container header #ConnectGPS {
+  grid-column: 2/3;
+  align-self: center;
+  justify-self: center;
+}
+.grid-container header .name {
+  grid-column: 3/7;
+  align-self: center;
+  justify-self: center;
+}
+.grid-container header #ConnectLamp {
+  grid-column: 7/8;
+  align-self: center;
+  justify-self: center;
+}
+.grid-container header a {
+  justify-self: center;
+  align-self: center;
+}
+.grid-container header .arrow {
+  width: 2vh;
+  height: 2vh;
+  border-top: 0.4vh solid #FFFFFF;
+  border-right: 0.4vh solid #FFFFFF;
+  margin-right: 2vh;
+}
+.grid-container header .arrow-right {
+  transform: rotate(45deg);
+}
+.grid-container .Cards {
+  height: 40vh;
+  width: 15vw;
+  border-radius: 5px;
+  background-color: #0088F8;
+  box-shadow: 2px 2px 12px 1px rgba(0, 70, 140, 0.5);
+  justify-self: center;
+}
+.grid-container .FlowCardsCircle {
+  width: 20vw;
+  height: 20vw;
+  background: #fefcff;
+  border-radius: 50%;
+  border: 1px solid rgba(140, 140, 140, 0.5);
+  box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, 0.5);
+}
+.grid-container .PumpCardsCircle {
+  width: 20vw;
+  height: 20vw;
+  background: #fefcff;
+  border-radius: 50%;
+  border: 1px solid rgba(140, 140, 140, 0.5);
+  box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, 0.5);
+}
+.grid-container .SetFlowInfo {
+  padding-top: 4%;
+  border-top: 4px solid #0078DB;
+  grid-area: SetFlowInfo;
+  grid-column: 2/5;
+  display: grid;
+  grid-template-columns: 13.3% 13.3% 13.3% 20% 10% 10% 10% 10%;
+  grid-template-areas: "sw1 sw2 sw3 info pa1 pa2 pa3 pa4" " . input input input input input input .";
+  height: 5%;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+}
+.grid-container .SetFlowInfo #SW1 {
+  grid-area: sw1;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo #SW2 {
+  grid-area: sw2;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo #SW3 {
+  grid-area: sw3;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo #PA {
+  grid-area: pa1;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo #PB {
+  grid-area: pa2;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo #PC {
+  grid-area: pa3;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo #PD {
+  grid-area: pa4;
+  justify-self: center;
+}
+.grid-container .SetFlowInfo .FlowInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  border: none;
+  border-radius: 5px;
+  background-color: #0078DB;
+  color: #FFFFFF;
+  font-size: 2.7vh;
+  font-weight: bold;
+}
+.grid-container .SetFlowInfo .SW {
+  height: 3vh;
+  width: 3vh;
+  border: none;
+  border-radius: 5px;
+  background-color: #BC0028;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 2vh;
+  font-weight: bold;
+}
+.grid-container .SetFlowInfo .PU {
+  height: 3vh;
+  width: 3vh;
+  border: none;
+  border-radius: 5px;
+  background-color: #3EAB0C;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 2vh;
+  font-weight: bold;
+}
+.grid-container .SetFlowInfo input[type=range] {
+  margin-top: 5%;
+  grid-area: input;
+  -webkit-appearance: none;
+}
+.grid-container .SetFlowInfo input[type=range]::-webkit-slider-runnable-track {
+  width: 95%;
+  height: 2vh;
+  cursor: pointer;
+  background: #48A3D9;
+  border-radius: 25px;
+  border: 1px solid #0000A0;
+}
+.grid-container .SetFlowInfo input:hover::-webkit-slider-runnable-track {
+  background-color: #aa39b5;
+}
+.grid-container .SetFlowInfo input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+}
+.grid-container .SetFlowInfo input[type=range]:focus {
+  outline: none;
+}
+.grid-container .SetFlowInfo input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+.grid-container #FluidInd {
+  grid-area: FluidInd;
+  background-color: #0088F8;
+}
+.grid-container #FlowInd {
+  grid-area: FlowInd;
+  background-color: #0078DB;
+  border-radius: 2%;
+  box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, 0.5);
+}
+.grid-container #PressInd {
+  grid-area: PressInd;
+  background-color: #0088F8;
+}
+.grid-container #SpeedInd {
+  grid-area: SpeedInd;
+  justify-self: center;
+}
+.grid-container #PumpInd {
+  grid-area: PumpInd;
+  justify-self: center;
+}
+.grid-container #StatusInfo {
+  height: 15vh;
+  width: 25vh;
+  border: 2px solid #0088F8;
+  background-color: #0078DB;
+  color: white;
+  border-radius: 5vh;
+  grid-area: Status;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container #StatusInfo p {
+  font-size: 4vh;
+  font-weight: bold;
+}
+.grid-container .MenuButton {
+  margin-top: 2%;
+  margin-bottom: 3%;
+  grid-area: MenuButton;
+  grid-column: 2/5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  border-radius: 5px;
+}
+.grid-container .MenuButton .ResetBotton {
+  border: none;
+  border-radius: 4px;
+  color: #FFFFF8;
+  background-color: #E68211;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+}
+.grid-container .MenuButton .StopBotton {
+  border: none;
+  border-radius: 4px;
+  color: #FFFFF8;
+  background-color: #BC0028;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+}
+.grid-container .MenuButton .StartBotton {
+  border: none;
+  border-radius: 4px;
+  color: #FFFFF8;
+  background-color: #3EAB0C;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+}
+.grid-container footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-areas: "info info info" "cnt cnt cnt";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto;
+  width: 100vw;
+  background-color: #00325B;
+  color: white;
+  display: grid;
+  grid-template-columns: 33vw auto 33vw;
+  grid-gap: 0px;
+  padding: 0px;
+  line-height: 0.7vh;
+  text-align: center;
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+.grid-container footer .cnt {
+  grid-area: cnt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-device-width: 374px) and (max-device-width: 576px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 5% repeat(3, 30%) 5%;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header header" ". FluidInd . PressInd ." ". FlowInd FlowInd FlowInd ." ". SpeedInd . PumpInd ." ". .  Status . ." ". SetFlowInfo SetFlowInfo SetFlowInfo ." ". MenuButton MenuButton MenuButton ." "footer footer footer footer footer";
+  }
+  .grid-container header {
+    grid-area: header;
+    display: grid;
+  }
+  .grid-container #FluidInd {
+    height: 25vh;
+    justify-self: center;
+  }
+  .grid-container #PressInd {
+    height: 25vh;
+    justify-self: center;
+  }
+  .grid-container #FlowInd {
+    height: 45vh;
+  }
+  .grid-container #SpeedInd {
+    margin-left: 30px;
+    height: 20vh;
+    width: 20vh;
+  }
+  .grid-container #PumpInd {
+    margin-right: 30px;
+    height: 20vh;
+    width: 20vh;
+  }
+  .grid-container #StatusInfo {
+    justify-self: center;
+    align-self: center;
+  }
+  .grid-container footer {
+    display: grid;
+    grid-template-areas: "info info info" "cnt cnt cnt" "cnt cnt cnt";
+  }
+  .grid-container footer .cnt {
+    grid-area: cnt;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
